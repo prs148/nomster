@@ -13,4 +13,11 @@
 
 <% end %> 
 
-<%= will_paginate @places, :page_links => false%>
+<div class=" col-12 offset-1">
+ <div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @posts %>
+    </div>
+    <%= will_paginate @posts, :container => false %>
+  </div>
+</div>
