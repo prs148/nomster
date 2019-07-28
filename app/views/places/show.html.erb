@@ -46,7 +46,7 @@
 <div class="clear"></div>
   
 <br />
-  
+
   
 
 <!-- Modal -->
@@ -99,6 +99,25 @@
     </div>
   <% end %>
 </div>
+
+<div class="row">
+  <% @place.photos.each  do |photo| %>
+    <blockquote>
+      <%= photo.picture.image_tag 'place_photos_path' %>
+      <%= photo.caption %>
+    </blockquote>
+  <% end %>
+</div>
+
+
+  <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+    <%= f.input :caption %>
+    <%= f.input :picture %>
+    <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+  <% end %>
+
+
+
 
 
 
