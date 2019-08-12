@@ -4,27 +4,47 @@
     <i><%= place.address %></i><br /><br />
     <p><%= place.description %></p><br />
 
-  <% if place.user.present?%>
-    <small><%= place.user.email %></small>
-  <% end %>
+    <% if place.user.present?%>
+      <small><%= place.user.email %></small>
+    <% end %>
 
-  <% if place.comments.present? %>
-    <div class="col-12">
-      <blockquote>
-      <% if place.comments.last.humanized_rating.present? %>
-          <b><%= place.comments.last.humanized_rating %></b> -
-        <% end %>
-        <%= place.comments.last.message %>
-        <small><%= place.comments.last.user.email %></small>
-      </blockquote>
-    </div>    
-  <% end %>
+    <% if place.comments.present? %>
+      <div class="col-12">
+        <blockquote>
+          <% if place.comments.last.humanized_rating.present? %>
+            <b><%= place.comments.last.humanized_rating %></b> -
+          <% end %>
+          <%= place.comments.last.message %>
+          <small><%= place.comments.last.user.email %></small>
+        </blockquote>
+      </div>    
+    <% end %>
 
-  </div>
+   <br />
+    
+    <% if place.photos.present? %>  
+      <div class="col-12 caption">
+         <%= image_tag "#{place.photos.last.picture}",  class: 'img-fluid' %>
+      </div>
+
+        <br /
+      <div class= "col-12  caption">
+             <%= place.photos.last.caption %>    
+      </div>
+      <% end %>
+
+    
+        <br/>
+    
   
 
+  </div>
 
 <% end %> 
+
+
+
+
 
 <div class=" col-12 offset-1">
  <div class="digg_pagination">
@@ -34,3 +54,7 @@
     <%= will_paginate @posts, :container => false %>
   </div>
 </div>
+
+
+
+
