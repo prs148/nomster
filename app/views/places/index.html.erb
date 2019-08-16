@@ -2,20 +2,19 @@
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
-      <%= image_tag 'slider1.jpg', class: 'd-block img-fluid' %>
-      <div class="carousel-caption d-none d-md-block">
-        <h3> Find the best food places in town</h3>
+      <%= image_tag 'slider2.jpg', class:'d-block img-fluid' %>  
+      <div class= "carousel-caption d-none d-md-block">
+        <h3> Find the best food in Boulder</h3>
       </div>
-    </div>
+    </div>  
     <div class="carousel-item">
-      <%= image_tag 'slider3.jpg', class: 'd-block img-fluid' %>
-      <div class= "carousel-caption d-none d-mid-block">
-          <h3> Great Places on Pearl Street!</h3>
-       </div>   
+      <%= image_tag 'slider4.jpg', class:'d-block img-fluid' %>
+      <div class= "carousel-caption d-none d-md-block">
+        <h3> You are what you eat </h3>
+      </div>  
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -27,7 +26,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 
 <% @places.each do |place| %>
   <div class= "booyah-box col-10 offset-1">
